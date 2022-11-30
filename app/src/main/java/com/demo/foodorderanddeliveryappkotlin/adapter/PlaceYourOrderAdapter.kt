@@ -35,7 +35,9 @@ class PlaceYourOrderAdapter(val menuList: List<Menus?>?): RecyclerView.Adapter<P
 
         fun bind(menu: Menus) {
             menuName.text = menu?.name!!
-            menuPrice.text = "Price $" + String.format("%.2f",menu?.price * menu.totalInCart)
+
+            var totalPrice = menu?.price * 80
+            menuPrice.text = "Price ₹" + String.format("%.2f",totalPrice * menu.totalInCart)
             menuQty.text = "Qty :" + menu?.totalInCart
 
             Glide.with(thumbImage)

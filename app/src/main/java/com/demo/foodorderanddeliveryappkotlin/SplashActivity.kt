@@ -11,9 +11,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        //for changing of text and we can hideaction bar
+
         val actionBar: ActionBar? = supportActionBar
         actionBar?.hide()
 
+//showing of splash screen couple of seconds
 
         Handler().postDelayed(Runnable {
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))

@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), RestaurantListAdapter.RestaurantListCl
         val adapter = RestaurantListAdapter(restaurantList, this)
         recyclerViewRestaurant.adapter =adapter
     }
-
+// parsing using json file
     private fun getRestaurantData(): List<RestaurentModel?>? {
         val inputStream: InputStream = resources.openRawResource(R.raw.restaurent)
         val writer: Writer = StringWriter()

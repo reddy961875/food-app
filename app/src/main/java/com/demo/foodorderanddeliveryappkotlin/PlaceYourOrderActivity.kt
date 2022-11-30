@@ -74,13 +74,16 @@ class PlaceYourOrderActivity : AppCompatActivity() {
             subTotalAmount += menu?.price!!  * menu?.totalInCart!!
 
         }
-        tvSubtotalAmount.text = "₹"+ String.format("%.2f", subTotalAmount)
+
+        var totalPrice = subTotalAmount * 80
+        tvSubtotalAmount.text = "₹"+ String.format("%.2f", totalPrice)
         if(isDeliveryOn) {
+            var totalPrice = subTotalAmount * 80
             tvDeliveryChargeAmount.text = "₹"+String.format("%.2f", restaurantModel.delivery_charge?.toFloat())
-            subTotalAmount += restaurantModel?.delivery_charge?.toFloat()!!
+            totalPrice += restaurantModel?.delivery_charge?.toFloat()!!
         }
 
-        tvTotalAmount.text = "₹"+ String.format("%.2f", subTotalAmount)
+        tvTotalAmount.text = "₹"+ String.format("%.2f", totalPrice)
     }
 
     private fun onPlaceOrderButtonCLick(restaurantModel: RestaurentModel?) {
